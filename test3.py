@@ -1,22 +1,22 @@
-import os
 import glob
+import os
 
 
 def replace_all_lines(file_path):
     # 定义替换规则
     replacement_map = {
-        'handler1': '0',
-        'handler2': '1',
-        'handler3': '2',
-        'handler4': '3',
-        'handler5': '4',
-        'handler6': '5',
-        'handler7': '6'
+        "handler1": "0",
+        "handler2": "1",
+        "handler3": "2",
+        "handler4": "3",
+        "handler5": "4",
+        "handler6": "5",
+        "handler7": "6",
     }
 
     try:
         # 读取文件内容
-        with open(file_path, 'r', encoding='utf-8') as file:
+        with open(file_path, encoding="utf-8") as file:
             lines = file.readlines()
 
         # 如果文件不为空
@@ -26,7 +26,6 @@ def replace_all_lines(file_path):
 
             # 处理每一行
             for line in lines:
-                original_line = line
                 stripped_line = line.strip()
 
                 # 检查每一行是否以某个handler开头
@@ -34,7 +33,7 @@ def replace_all_lines(file_path):
                 for handler, replacement in replacement_map.items():
                     if stripped_line.startswith(handler):
                         # 替换行开头，保持其他内容不变
-                        new_line = replacement + stripped_line[len(handler):] + '\n'
+                        new_line = replacement + stripped_line[len(handler) :] + "\n"
                         new_lines.append(new_line)
                         replaced = True
                         modified = True
@@ -46,7 +45,7 @@ def replace_all_lines(file_path):
 
             # 如果进行了修改，则写回文件
             if modified:
-                with open(file_path, 'w', encoding='utf-8') as file:
+                with open(file_path, "w", encoding="utf-8") as file:
                     file.writelines(new_lines)
                 print(f"已处理文件: {file_path}")
             else:
@@ -55,7 +54,7 @@ def replace_all_lines(file_path):
             print(f"跳过空文件: {file_path}")
 
     except Exception as e:
-        print(f"处理文件 {file_path} 时出错: {str(e)}")
+        print(f"处理文件 {file_path} 时出错: {e!s}")
 
 
 def process_folder(folder_path):
@@ -77,7 +76,7 @@ def process_folder(folder_path):
 
 # 使用示例
 if __name__ == "__main__":
-    folder_path = "C:/Users/Administrator/Desktop/ultralytics-main/ultralytics-main/datasets/hander/labels/train"
+    folder_path = "C:/Users/Administrator/Desktop/ultralytics-main/ultralytics-main/datasets/handler/labels/train"
 
     # 检查文件夹是否存在
     if os.path.exists(folder_path) and os.path.isdir(folder_path):
