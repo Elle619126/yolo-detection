@@ -3,7 +3,7 @@ from ultralytics import YOLO
 # 加载预训练的YOLOv11n模型
 model = YOLO(r"runs/detect/train13/weights/best.pt")
 
-#model.predict('D:/ultralytics-main/ultralytics-main/datasets/hander/images/train/hander1_1.jpg', save=True, device=[0], line_width=2)
+# model.predict('D:/ultralytics-main/ultralytics-main/datasets/handler/images/train/hander1_1.jpg', save=True, device=[0], line_width=2)
 
 
 # 对指定的图像文件夹进行推理，并设置各种参数
@@ -32,6 +32,5 @@ results = model.predict(
     show_labels=True,  # 显示检测的标签
     show_conf=True,  # 显示检测置信度
     show_boxes=True,  # 显示检测框
-    line_width=None  # 设置边界框的线条宽度，比如2，4
+    line_width=None,  # 设置边界框的线条宽度，比如2，4
 )
-

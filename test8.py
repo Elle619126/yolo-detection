@@ -1,13 +1,13 @@
 from ultralytics import YOLO
 
-
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     # 加载预训练的YOLOv11n模型
     model = YOLO(r"runs/detect/train12/weights/best.pt")
 
     # Run batched inference on a list of images
-    results = model(["D:/ultralytics-main/ultralytics-main/datasets/hander/images/train/hander1_1.jpg"])  # return a list of Results objects
+    results = model(
+        ["D:/ultralytics-main/ultralytics-main/datasets/handler/images/train/hander1_1.jpg"]
+    )  # return a list of Results objects
 
     # Process results list
     for result in results:
