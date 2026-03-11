@@ -1,7 +1,6 @@
 from ultralytics import YOLO
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     model = YOLO("yolo11n.pt")
 
     # Train the model on the COCO8 dataset for 100 epochs
